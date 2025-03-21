@@ -5,13 +5,12 @@ export const USER_PROFILE_URL =
   "https://occ-0-5690-3662.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABStlS0MPUGcy6Ovyeia-3ddnnXNb2Lri4P4H4QCFuR_yaGs0umyqHUDOZcOBKF8MFUGHX07txAW70z7wq_S9AKGQ_MixrLQ.png?r=a4b";
 export const BG_URL =
   "https://assets.nflxext.com/ffe/siteui/vlv3/50fcc930-ba3f-4cae-9257-9f920e30a998/web/IN-en-20250310-TRIFECTA-perspective_739387a0-ff14-44ed-a5af-36e5aa4d236e_small.jpg";
-
+const TMDB_apiKey = import.meta.env.VITE_APP_TMDB_API;
 export const API_OPTIONS = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwYWJjYzgzMDViZjEzYzY0NGVhMWQ3NjAyMTNkOTkxMCIsIm5iZiI6MTc0MjM5MzMzMi43NTYsInN1YiI6IjY3ZGFjZmY0ZTgzMDI1MzMyMDZjYjg0OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.l5l1YcjTWcbd1iXyX0Cb573hlPPKsKB_vyCXPjFJgno",
+    Authorization: "Bearer " + TMDB_apiKey,
   },
 };
 
@@ -22,3 +21,7 @@ export const LANGUAGES_SUPPORTED = [
   { identifier: "hindi", name: "Hindi" },
   { identifier: "spanish", name: "Spanish" },
 ];
+
+export const OPENAI_KEY =
+  "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";
+// export const OPENAI_KEY = "AIzaSyD6AZFcQvXmHh3vRD1hB13FB2YDEPUfEJg";

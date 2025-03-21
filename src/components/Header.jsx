@@ -1,11 +1,11 @@
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { addUser, removeUser } from "../utils/userSlice";
 import { LANGUAGES_SUPPORTED, LOGO_URL } from "../utils/constants";
 import { auth } from "../utils/firebase";
-import { toggleGptSearch } from "../utils/gptSearchSlice";
+import { addGptMovies, toggleGptSearch } from "../utils/gptSearchSlice";
 import { changeLanguage } from "../utils/configSlice";
 
 const Header = () => {
@@ -45,6 +45,9 @@ const Header = () => {
     return () => unsubscribe();
   }, []);
   const handleToggle = () => {
+    // if (showGpt == true) {
+    //   dispatch(addGptMovies({ movieNames: null, movieResults: null }));
+    // }
     dispatch(toggleGptSearch());
   };
   const handleLanguageChange = (e) => {
@@ -53,10 +56,12 @@ const Header = () => {
   const showGpt = useSelector((store) => store.gpt.showGptSearch);
   return (
     <div className="absolute z-50 px-8 py-2 bg-gradient-to-b from-black w-full flex justify-between">
-      <img className="w-44" src={LOGO_URL} />
+      <Link to="/">
+        <img className="w-44" src={LOGO_URL} />
+      </Link>
       {user && (
         <>
-          <div className="flex w-3/12 justify-end">
+          <div className="flex w-5/12 justify-end">
             {showGpt && (
               <select
                 onChange={handleLanguageChange}
