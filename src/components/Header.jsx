@@ -55,13 +55,13 @@ const Header = () => {
   };
   const showGpt = useSelector((store) => store.gpt.showGptSearch);
   return (
-    <div className="absolute z-50 px-8 py-2 bg-gradient-to-b from-black w-full flex justify-between">
+    <div className="bg-black md:bg-transparent md:absolute z-50 px-8 py-2 bg-gradient-to-b from-black w-full flex justify-between flex-col md:flex-row">
       <Link to="/">
-        <img className="w-44" src={LOGO_URL} />
+        <img className="w-30 md:w-44 mx-auto md:mx-0" src={LOGO_URL} />
       </Link>
       {user && (
         <>
-          <div className="flex w-5/12 justify-end">
+          <div className="flex justify-center w-12/12 md:w-5/12 md:justify-end">
             {showGpt && (
               <select
                 onChange={handleLanguageChange}

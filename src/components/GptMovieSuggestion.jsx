@@ -8,7 +8,7 @@ const GptMovieSuggestion = () => {
   // console.log(movieLists);
 
   return (
-    <div className="p-4 m-4 bg-black/80 text-white">
+    <div className="py-4  md:m-4 bg-black/80 text-white">
       {movieNames.map((movie, index) => (
         <MovieList key={movie} title={movie} movies={movieResults[index]} />
       ))}
