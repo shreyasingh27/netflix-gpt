@@ -2,7 +2,6 @@ import React from "react";
 import MovieCard from "./MovieCard";
 
 const MovieList = ({ movies, title }) => {
-  console.log(movies);
   if (!movies) return;
   return (
     <div className="px-10 py-3 text-white">
